@@ -70,8 +70,8 @@ colnames(finalData) <- colNames
 
 #5.From the data set in step 4, creates a second, independent tidy data 
 # set with the average of each variable for each activity and each subject.
-Data2<-aggregate(. ~subjectId + Id, finalData, mean)
-Data2<-Data2[order(Data2$subjectId,Data2$Id),]
+Data2<-aggregate(. ~subjectId + Type, finalData, mean)
+Data2<-Data2[order(Data2$subjectId,Data2$Type),]
 write.table(Data2, file = "tidydata.txt",row.name=FALSE)
 
 
